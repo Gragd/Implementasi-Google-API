@@ -1,25 +1,21 @@
 package com.example.implementasisigningoogle
 
 import android.content.Intent
-import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.ImageView
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.bumptech.glide.Glide
-import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-
 
 class MainActivity2 : AppCompatActivity() {
 
@@ -86,28 +82,12 @@ class MainActivity2 : AppCompatActivity() {
              * installed Google Play services and returned to the app.
              */
 
-            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED
-            ) {
-                // Izin lokasi user
-                val fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-                fusedLocationClient.lastLocation.addOnSuccessListener { location ->
-                    if (location != null) {
-                        val userLocation = LatLng(location.latitude, location.longitude)
-                        googleMap.addMarker(
-                            MarkerOptions().position(userLocation)
-                                .title("Marker di lokasi user"))
-                        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 15f))
-                    } else {
-                        val sydney = LatLng(-34.0, 151.0)
-                        googleMap.addMarker(
-                            MarkerOptions().position(sydney).title("Marker in Sydney"))
-                        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
-                        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 15f))
-                    }
-                }
-            }
+            val jakarta = LatLng(-6.200000, 106.816666)
+            googleMap.addMarker(MarkerOptions().position(jakarta).title("Marker in Jakarta"))
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(jakarta, 12f))
         }
+
+
     }
 
 
