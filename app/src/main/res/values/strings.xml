@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Implementasi Sign In Google</string>
+    <string name="selamat_datang">Selamat Datang!</string>
+    <string name="web_client_id" tools:ignore="TypographyDashes">569680325684-7ik7841003jalfqb3t9n6f0jtsai057b.apps.googleusercontent.com</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="logout">Logout</string>
+</resources>
